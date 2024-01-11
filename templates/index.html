@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Operations</title>
+  </head>
+  <body>
+    <h1>CRUD Operations</h1>
+
+    <!-- Form to create a new item -->
+    <form method="POST" action="/create">
+      <label for="new_item">New Item:</label>
+      <input type="text" id="new_item" name="new_item" required />
+      <button type="submit">Create</button>
+    </form>
+
+    <!-- Display existing items -->
+    <h2>Items:</h2>
+    <ul>
+      {% for item in items %}
+      <li>
+        {{ item.name }}
+        <a href="/edit/{{ item.id }}">Edit</a>
+        <a href="/delete/{{ item.id }}">Delete</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+  </body>
+</html>

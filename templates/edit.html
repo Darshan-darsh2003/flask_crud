@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Item</title>
+  </head>
+  <body>
+    <h1>Edit Item</h1>
+
+    <!-- Form to update an existing item -->
+    <form method="POST" action="/update/{{ item.id }}">
+      <label for="updated_item_name">Updated Item Name:</label>
+      <input
+        type="text"
+        id="updated_item_name"
+        name="updated_item_name"
+        value="{{ item.name }}"
+        required
+      />
+      <button type="submit">Update</button>
+    </form>
+  </body>
+</html>
